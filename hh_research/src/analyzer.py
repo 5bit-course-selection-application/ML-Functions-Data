@@ -1,37 +1,4 @@
-r"""Researcher: collect statistics, predict salaries etc.
 
-------------------------------------------------------------------------
-
-GNU GENERAL PUBLIC LICENSE
-Version 3, 29 June 2007
-
-Copyright (c) 2020 Kapitanov Alexander
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
-APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
-HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT
-WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT
-NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND
-PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE
-DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR
-OR CORRECTION.
-
-------------------------------------------------------------------------
-"""
-
-# Authors       : Alexander Kapitanov
-# ...
-# Contacts      : <empty>
-# License       : GNU GENERAL PUBLIC LICENSE
 
 import re
 from typing import Dict, List
@@ -46,11 +13,7 @@ import seaborn as sns
 class Analyzer:
     def __init__(self, save_csv: bool = False):
         self.save_csv = save_csv
-        # try:
-        #     nltk.download("stopwords")
-        # except:
-        #     print(r"[INFO] You have downloaded stopwords!")
-
+       
     @staticmethod
     def find_top_words_from_keys(keys_list: List) -> pd.Series:
         """Find most used words into description of vacancies.
