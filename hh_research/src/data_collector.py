@@ -1,9 +1,3 @@
-r"""Vacancy finder
-
-------------------------------------------------------------------------
-
-
-"""
 
 import hashlib
 import os
@@ -20,10 +14,7 @@ CACHE_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), "cache")
 
 
 class DataCollector:
-    r"""R
-
     
-    """
     __API_BASE_URL = "https://api.hh.ru/vacancies/"
     __DICT_KEYS = (
         "Ids",
@@ -71,9 +62,7 @@ class DataCollector:
         # Extract salary
         salary = vacancy.get("salary")
 
-        # Calculate salary:
-        # Get salary into {RUB, USD, EUR} with {Gross} parameter and
-        # return a new salary in RUB.
+
         from_to = {"from": None, "to": None}
         if salary:
             is_gross = vacancy["salary"].get("gross")
@@ -82,7 +71,7 @@ class DataCollector:
                     _value = self.__convert_gross(is_gross)
                     from_to[k] = int(_value * salary[k] / self._rates[salary["currency"]])
 
-        # Create pages tuple
+   
         return (
             vacancy_id,
             vacancy.get("name", ""),
