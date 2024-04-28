@@ -12,7 +12,7 @@ SETTINGS_PATH = "settings.json"
 
 
 class ResearcherHH:
-    """Main class for searching vacancies and analyze them."""
+   
 
     def __init__(self, config_path: str = SETTINGS_PATH, no_parse: bool = False):
         self.settings = Settings(config_path, no_parse=no_parse)
@@ -28,12 +28,12 @@ class ResearcherHH:
             self.exchanger.update_exchange_rates(self.settings.rates)
             self.exchanger.save_rates(self.settings.rates)
 
-        #print(f"[INFO]: Get exchange rates: {self.settings.rates}")
+       
         self.collector = DataCollector(self.settings.rates)
         self.analyzer = Analyzer(self.settings.save_result)
 
     def __call__(self):
-        #print("[INFO]: Collect data from JSON. Create list of vacancies...")
+        
         vacancies = self.collector.collect_vacancies(
             query=self.settings.options, refresh=self.settings.refresh, num_workers=self.settings.num_workers
         )
